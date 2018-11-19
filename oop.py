@@ -8,10 +8,11 @@ users = []
 comments = []
 
 class Users:
-    def __init__(self, username=None, password=None, role=None):
+    def __init__(self, username=None, password=None, role=None, loggedInAt = None):
         self.username = username
         self.password = password
         self.role = role
+        self.loggedInAt = loggedInAt
 
     
     def register(self):
@@ -38,10 +39,27 @@ class Users:
                 else:
                     print("Invalid role. Role must be admin, moderator or normal user")
                     continue
+
+
+    def login(self):
+        #This method logs in the user
+        while True:
+            self.username = input("\n\nUSERNAME \nPlease enter your username: \n")
+            self.password = input("Please enter your password: \n")
+
+            for user in users:
+                if user["username"] ==  self.username and user["password"] == self.password:
+                    timestamp = datetime.datetime.now()
+                    user["loggedInAt"] = timestamp
+                    print("Successfully logged in at:", timestamp)
+                else:
+                    print("One or more details are incoorect. Please try again")
+
                 
 
 if __name__ == "__main__":
     #instantiation and method calls
     user = Users()
     user.register()
+    user.login()
 
