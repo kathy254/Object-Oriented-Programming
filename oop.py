@@ -32,7 +32,7 @@ class Users:
                 print("This username already exists")
                 continue
             else:
-                if user["role"] =="admin" or user["role"] == "moderator" or user["role"] == "normal_user":
+                if user["role"] == "admin" or user["role"] == "moderator" or user["role"] == "Normal":
                     users.append(user)
                     print("\nWelcome " + user["username"])
                     return "success"
@@ -54,6 +54,31 @@ class Users:
                     print("Successfully logged in at:", timestamp)
                 else:
                     print("One or more details are incoorect. Please try again")
+
+    
+class Comments():
+    def __init__ (self, comment_id, author, message, timestamp):
+        self.comment_id = comment_id
+        self.author = author
+        self.message = message
+        self.timestamp = timestamp
+
+    def add_comment(self):
+        user1 = User()
+        self.message = input("\nCOMMENT \n\nType your comment: \n")
+        for user in users:
+            if user1.username == users["username"]:
+                self.author = user1.username
+        self.timestamp = datetime.datetime.now()
+        self.comment_id = len(comments) + 1
+        new_comment = {
+            "comment": self.comment_id,
+            "message": self.message,
+            "timestamp": self.timestamp
+        }
+        comments.append(new_comment)
+        print("\nComment added successfully.\n")
+        print("comment: " + new_comment["message"] + "added at" + new_comment["timestamp"])
 
                 
 
