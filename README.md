@@ -5,38 +5,39 @@ This is a simple forum application
 
 **To run this app, follow these steps**
 
-```
+
 1. Create a virtual environemnt with the following command:
+```
     virtualenv -p python3 env
 ```
 
-```
 2. Activate the virtual environment with this command:
+```
    source env/bin/activate
 ```
 
-```
 3. Install git
+```
    sudo apt install git
 ```
 
-```
 4. Clone this repository
+```
    git clone https://github.com/kathy254/Object-Oriented-Programming.git
 ```
 
-```
 5. cd into the folder
+```
    Object-Oriented Programming
 ```
 
-```
 6. Switch to the develop branch
+```
    git checkout develop
 ```
 
-```
 7. For the application, run:
+```
    python3 oop.py
 ```
 
