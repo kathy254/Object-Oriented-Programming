@@ -58,6 +58,12 @@ class Users:
                 if user["role"] == "normal_user":
                     comment = Comments()
                     comment.add_comment()
+                if user["role"] == "moderator":
+                    comment = Comments()
+                    comment.add_comment()
+                if user["role"] == "admin":
+                    comment = Comments()
+                    comment.add_comment()
 
     
 class Comments:
